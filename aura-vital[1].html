@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VivaSpace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a href="index.html" class="logo"><span class="v-red">V</span>ivaSpace <span class="divider">|</span> <span class="brand-sub"><span class="v-red">V</span>ital</span></a>
+    <nav class="nav">
+      <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li class="has-dropdown">
+          <a href="aura-vital.html">Servicios</a>
+          <ul class="dropdown">
+            <li><a href="aura-vital.html#depilacion">Depilación láser definitiva</a></li>
+            <li><a href="aura-vital.html#faciales">Faciales</a></li>
+            <li><a href="aura-vital.html#corporales">Corporales</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="alquiler.html">Alquiler de espacios</a>
+          <ul class="dropdown">
+            <li><a href="alquiler.html#consultorios">Consultorios</a></li>
+            <li><a href="alquiler.html#salas">Salas</a></li>
+            <li><a href="alquiler.html#elegirnos">Por qué elegirnos</a></li>
+          </ul>
+        </li>
+        <li><a href="reservas.html">Calendario</a></li>
+        <li><a href="pagos.html">Pagos</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container page">
+  <button class="back" onclick="history.back()">← Volver</button>
+  <h1><span class="v-red">A</span>ura <span class="v-red">V</span>ital</h1>
+  <p>Tratamientos y servicios para tu bienestar.</p>
+
+  <section id="depilacion" class="svc">
+    <h2>Depilación láser definitiva · Soprano Titanium</h2>
+    <p>Triple longitud de onda (755/810/1064 nm) para una cobertura eficaz en distintos fototipos con mayor confort.</p>
+    <div class="svc-actions">
+      <a class="btn primary" href="reservas.html?servicio=depilacion">Reservar</a>
+      <button class="btn secondary" data-toggle="more-dep">Más información</button>
+    </div>
+    <div id="more-dep" class="more hidden">
+      <h3>Más información</h3>
+      <ul>
+        <li>Áreas posibles: rostro, axilas, bikini, piernas y más.</li>
+        <li>Recomendación: 6–8 sesiones con intervalos sugeridos por profesional.</li>
+        <li>Cuidados: evitar sol previo/post, usar FPS alto.</li>
+        <li>Contraindicaciones: embarazo, piel lesionada, fotosensibilidad.</li>
+      </ul>
+      <h4>Fotos del servicio</h4>
+      <div class="gallery">
+        <img src="assets/hero1.jpg" alt="Depilación 1"/>
+        <img src="assets/hero2.jpg" alt="Depilación 2"/>
+      </div>
+      <div class="upload">
+        <label>Cargar nuevas fotos/videos <input type="file" accept="image/*,video/*" multiple onchange="previewFiles(event,'dep-preview')"></label>
+        <div id="dep-preview" class="preview"></div>
+      </div>
+      <h4>Reel / Video</h4>
+      <p>Pegá el enlace (Instagram/YouTube) o subí tu clip.</p>
+      <input type="url" placeholder="https://www.instagram.com/reel/..." oninput="embedVideo(event,'dep-embed')">
+      <div id="dep-embed" class="embed"></div>
+    </div>
+  </section>
+
+  <section id="faciales" class="svc">
+    <h2>Faciales</h2>
+    <p>Limpieza profunda, radiofrecuencia, Dermapen y planes de cuidado personalizados.</p>
+    <div class="svc-actions"><button class="btn secondary" data-toggle="more-fac">Más información</button></div>
+    <div id="more-fac" class="more hidden">
+      <p>Incluye evaluación de piel, rutina sugerida y frecuencia de sesiones. Resultados progresivos y medibles.</p>
+      <label>Cargar fotos/videos <input type="file" accept="image/*,video/*" multiple onchange="previewFiles(event,'fac-preview')"></label>
+      <div id="fac-preview" class="preview"></div>
+      <input type="url" placeholder="Link de reel/video" oninput="embedVideo(event,'fac-embed')">
+      <div id="fac-embed" class="embed"></div>
+    </div>
+  </section>
+
+  <section id="corporales" class="svc">
+    <h2>Corporales</h2>
+    <p>Radiofrecuencia, cavitación y masajes modeladores para redefinir contornos y mejorar la firmeza.</p>
+    <div class="svc-actions"><button class="btn secondary" data-toggle="more-cor">Más información</button></div>
+    <div id="more-cor" class="more hidden">
+      <p>Planes combinados según objetivos y evaluación inicial. Incluye recomendaciones de hábitos.</p>
+      <label>Cargar fotos/videos <input type="file" accept="image/*,video/*" multiple onchange="previewFiles(event,'cor-preview')"></label>
+      <div id="cor-preview" class="preview"></div>
+      <input type="url" placeholder="Link de reel/video" oninput="embedVideo(event,'cor-embed')">
+      <div id="cor-embed" class="embed"></div>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <h4>Contacto</h4>
+      <p>Aparicio Saravia & Danton 899, Montevideo</p>
+      <p><a href="tel:+59800000000">+598 0000 0000</a></p>
+      <p><a href="mailto:info@vivaspace.com.uy">info@vivaspace.com.uy</a></p>
+    </div>
+    <div>
+      <h4>Redes</h4>
+      <p><a href="#" target="_blank">Instagram</a> · <a href="#" target="_blank">Facebook</a></p>
+    </div>
+    <div>
+      <h4>Horario</h4>
+      <p>Lun a Vie 10:00–19:00 · Sáb 10:00–14:00</p>
+    </div>
+  </div>
+  <div class="container legal">
+    <span>© 2025 VivaSpace. Todos los derechos reservados.</span>
+  </div>
+</footer>
+<a href="https://wa.me/59800000000" class="wsp" aria-label="WhatsApp">✆</a>
+</body>
+</html>
