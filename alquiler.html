@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VivaSpace</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a href="index.html" class="logo"><span class="v-red">V</span>ivaSpace <span class="divider">|</span> <span class="brand-sub"><span class="v-red">V</span>ital</span></a>
+    <nav class="nav">
+      <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li class="has-dropdown">
+          <a href="aura-vital.html">Servicios</a>
+          <ul class="dropdown">
+            <li><a href="aura-vital.html#depilacion">Depilación láser definitiva</a></li>
+            <li><a href="aura-vital.html#faciales">Faciales</a></li>
+            <li><a href="aura-vital.html#corporales">Corporales</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="alquiler.html">Alquiler de espacios</a>
+          <ul class="dropdown">
+            <li><a href="alquiler.html#consultorios">Consultorios</a></li>
+            <li><a href="alquiler.html#salas">Salas</a></li>
+            <li><a href="alquiler.html#elegirnos">Por qué elegirnos</a></li>
+          </ul>
+        </li>
+        <li><a href="reservas.html">Calendario</a></li>
+        <li><a href="pagos.html">Pagos</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container page">
+  <button class="back" onclick="history.back()">← Volver</button>
+  <h1>Alquiler de espacios</h1>
+  <p>Consultorios y salas equipadas, listas para trabajar.</p>
+
+  <section class="highlight-card">
+    <h2 class="gold-title">Descubrí un espacio pensado para vos</h2>
+    <p>Un entorno <strong>moderno, funcional y minimalista</strong>, creado para brindar una experiencia de calidad tanto a profesionales como a quienes los consultan. Combinamos <strong>confort y amabilidad</strong> como diferenciales, ofreciendo un ambiente ideal para trabajar, atender o crear.</p>
+    <p>Con nuestro <strong>sistema de reservas 100% online, autogestionable y automatizado</strong>, podés elegir el consultorio, el horario y la forma de pago en pocos clics. Al confirmar tu reserva y completar el pago, recibís de inmediato tus <strong>datos de acceso</strong> y una <strong>clave digital o código QR</strong> para ingresar. Solo llegás… y empezás a trabajar.</p>
+    <h3 class="mt">Cada espacio incluye</h3>
+    <ul class="checks">
+      <li>Climatización independiente.</li>
+      <li>WiFi de alta velocidad.</li>
+      <li>Servicio de agua y luz.</li>
+      <li>Audio por bluetooth exclusivo por consultorio.</li>
+      <li>Sistema de iluminación con atenuadores.</li>
+      <li>Aromaterapia ambiental.</li>
+    </ul>
+    <p><strong>Sin intermediarios. Sin esperas. Sin trabas.</strong> Reservás. Pagás. Usás.</p>
+  </section>
+
+
+  <section id="consultorios" class="svc">
+    <h2>Consultorios</h2>
+    <p>Espacios con camilla, mobiliario esencial y Wi‑Fi. Por hora, media jornada o jornada completa.</p>
+
+<div class="rooms-grid">
+  <article class="room-card" id="consultorio-1">
+    <header>
+      <h3>Consultorio 1</h3>
+      <span class="badge">9 m² + baño 4 m²</span>
+    </header>
+    <ul class="meta">
+      <li><strong>Dimensiones del consultorio:</strong> 2.45 m × 3.67 m</li>
+      <li><strong>Dimensiones del baño:</strong> 2.45 m × 1.63 m</li>
+    </ul>
+    <div class="gallery">
+      <img src="img/consultorios/consultorio1-plano.png" alt="Plano Consultorio 1 (9 m²)">
+      <img src="img/consultorios/consultorio1-ref1.png" alt="Referencia de diseño - Consultorio 1">
+      <img src="img/consultorios/consultorio1-ref2.png" alt="Referencia de iluminación - Consultorio 1">
+    </div>
+    <div class="room-actions">
+      <a class="btn primary" href="reservas.html?servicio=alquiler-consultorio&room=1">Reservar</a>
+      <a class="btn ghost" href="pagos.html?servicio=alquiler-consultorio&room=1">Ver formas de pago</a>
+    </div>
+  </article>
+
+  <article class="room-card" id="consultorio-2">
+    <header>
+      <h3>Consultorio 2</h3>
+      <span class="badge">6 m² + toilette 2.45 m²</span>
+    </header>
+    <ul class="meta">
+      <li><strong>Dimensiones del consultorio:</strong> 2.45 m × 2.45 m</li>
+    </ul>
+    <div class="gallery">
+      <img src="img/consultorios/consultorio2-plano.png" alt="Plano Consultorio 2 (6 m²)">
+    </div>
+    <div class="room-actions">
+      <a class="btn primary" href="reservas.html?servicio=alquiler-consultorio&room=2">Reservar</a>
+      <a class="btn ghost" href="pagos.html?servicio=alquiler-consultorio&room=2">Ver formas de pago</a>
+    </div>
+  </article>
+</div>
+
+    <div class="svc-actions">
+      <a class="btn primary" href="reservas.html?servicio=alquiler-consultorio">Reservar consultorio</a>
+      <button class="btn secondary" data-toggle="more-con">Más información</button>
+    </div>
+    <div id="more-con" class="more hidden">
+      <p>Dimensiones, equipamiento y condiciones (disponibilidad, limpieza y soporte en sitio).</p>
+      <label>Cargar fotos/videos <input type="file" accept="image/*,video/*" multiple onchange="previewFiles(event,'con-preview')"></label>
+      <div id="con-preview" class="preview"></div>
+      <input type="url" placeholder="Link de reel/video" oninput="embedVideo(event,'con-embed')">
+      <div id="con-embed" class="embed"></div>
+    </div>
+  </section>
+
+<section id="consultorios-detalle" class="svc grid-cards">
+  <article class="card">
+    <div class="card-head">
+      <h3>Consultorio 1</h3>
+      <span class="badge">9 m² + baño 4 m²</span>
+    </div>
+    <p><strong>Dimensiones:</strong> 2.45 × 3.67 m. <strong>Baño:</strong> 2.45 × 1.63 m.</p>
+    <div class="gallery" data-gallery="c1">
+      <img src="assets/consultorios/c1_plano.png" alt="Plano Consultorio 1" class="thumb">
+      <img src="assets/consultorios/c1_ref1.png" alt="Referencia 1 Consultorio 1" class="thumb">
+      <img src="assets/consultorios/c1_ref2.png" alt="Referencia 2 Consultorio 1" class="thumb">
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-head">
+      <h3>Consultorio 2</h3>
+      <span class="badge">6 m² + toilette 2.45 m²</span>
+    </div>
+    <p><strong>Dimensiones:</strong> 2.45 × 2.45 m.</p>
+    <div class="gallery" data-gallery="c2">
+      <img src="assets/consultorios/c2_plano.png" alt="Plano Consultorio 2" class="thumb">
+    </div>
+  </article>
+</section>
+<!-- Lightbox container -->
+<div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true">
+  <button class="lb-close" aria-label="Cerrar">×</button>
+  <button class="lb-prev" aria-label="Anterior">‹</button>
+  <img id="lb-img" alt="Imagen ampliada">
+  <button class="lb-next" aria-label="Siguiente">›</button>
+</div>
+
+
+  <section id="salas" class="svc">
+    <h2>Salas</h2>
+    <p>Ideales para workshops y capacitaciones. Opción de proyector y disposición flexible.</p>
+    <div class="svc-actions">
+      <a class="btn primary" href="reservas.html?servicio=alquiler-sala">Reservar sala</a>
+      <button class="btn secondary" data-toggle="more-sal">Más información</button>
+    </div>
+    <div id="more-sal" class="more hidden">
+      <p>Capacidad, distribución y servicios adicionales (coffee, recepción).</p>
+      <label>Cargar fotos/videos <input type="file" accept="image/*,video/*" multiple onchange="previewFiles(event,'sal-preview')"></label>
+      <div id="sal-preview" class="preview"></div>
+      <input type="url" placeholder="Link de reel/video" oninput="embedVideo(event,'sal-embed')">
+      <div id="sal-embed" class="embed"></div>
+    </div>
+  </section>
+
+  <section id="elegirnos" class="svc">
+    <!-- Pegá aquí el TEXTO FINAL de “Por qué elegirnos” definido ayer -->
+    <h2>Por qué elegirnos</h2>
+    <ul class="checks">
+      <li>Ubicación accesible y segura.</li>
+      <li>Ambientes luminosos, limpios y bien equipados.</li>
+      <li>Reservas flexibles por hora o jornada.</li>
+      <li>Soporte en sitio y recepción básica.</li>
+    </ul>
+  </section>
+</main>
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <h4>Contacto</h4>
+      <p>Aparicio Saravia & Danton 899, Montevideo</p>
+      <p><a href="tel:+59800000000">+598 0000 0000</a></p>
+      <p><a href="mailto:info@vivaspace.com.uy">info@vivaspace.com.uy</a></p>
+    </div>
+    <div>
+      <h4>Redes</h4>
+      <p><a href="#" target="_blank">Instagram</a> · <a href="#" target="_blank">Facebook</a></p>
+    </div>
+    <div>
+      <h4>Horario</h4>
+      <p>Lun a Vie 10:00–19:00 · Sáb 10:00–14:00</p>
+    </div>
+  </div>
+  <div class="container legal">
+    <span>© 2025 VivaSpace. Todos los derechos reservados.</span>
+  </div>
+</footer>
+<a href="https://wa.me/59800000000" class="wsp" aria-label="WhatsApp">✆</a>
+</body>
+</html>

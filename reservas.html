@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VivaSpace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a href="index.html" class="logo"><span class="v-red">V</span>ivaSpace <span class="divider">|</span> <span class="brand-sub"><span class="v-red">V</span>ital</span></a>
+    <nav class="nav">
+      <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li class="has-dropdown">
+          <a href="aura-vital.html">Servicios</a>
+          <ul class="dropdown">
+            <li><a href="aura-vital.html#depilacion">Depilación láser definitiva</a></li>
+            <li><a href="aura-vital.html#faciales">Faciales</a></li>
+            <li><a href="aura-vital.html#corporales">Corporales</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="alquiler.html">Alquiler de espacios</a>
+          <ul class="dropdown">
+            <li><a href="alquiler.html#consultorios">Consultorios</a></li>
+            <li><a href="alquiler.html#salas">Salas</a></li>
+            <li><a href="alquiler.html#elegirnos">Por qué elegirnos</a></li>
+          </ul>
+        </li>
+        <li><a href="reservas.html">Calendario</a></li>
+        <li><a href="pagos.html">Pagos</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container page">
+  <button class="back" onclick="history.back()">← Volver</button>
+  <h1>Calendario de reservas</h1>
+  <p>Elegí servicio, fecha y hora. Los datos de contacto se solicitarán después del pago.</p>
+  <form id="reservaForm" class="reserva-form">
+    <label>Servicio
+      <select name="servicio" id="servicio" required>
+        <option value="depilacion">Depilación láser definitiva</option>
+        <option value="facial">Facial</option>
+        <option value="corporal">Corporal</option>
+        <option value="alquiler-consultorio">Alquiler de consultorio</option>
+        <option value="alquiler-sala">Alquiler de sala</option>
+      </select>
+    </label>
+    <label>Profesional/espacio
+      <select name="profesional" required>
+        <option>Profesional A</option>
+        <option>Profesional B</option>
+        <option>Espacio 1</option>
+        <option>Espacio 2</option>
+      </select>
+    </label>
+    <label>Fecha <input type="date" name="fecha" required></label>
+    <label>Hora
+      <select name="hora" required>
+        <option>10:00</option>
+        <option>11:30</option>
+        <option>13:00</option>
+        <option>15:00</option>
+        <option>17:00</option>
+      </select>
+    </label>
+    <div class="price">Total a pagar: <strong id="precio">$1.400</strong></div>
+    <button class="btn primary" type="submit">Continuar a pago</button>
+  </form>
+</main>
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <h4>Contacto</h4>
+      <p>Aparicio Saravia & Danton 899, Montevideo</p>
+      <p><a href="tel:+59800000000">+598 0000 0000</a></p>
+      <p><a href="mailto:info@vivaspace.com.uy">info@vivaspace.com.uy</a></p>
+    </div>
+    <div>
+      <h4>Redes</h4>
+      <p><a href="#" target="_blank">Instagram</a> · <a href="#" target="_blank">Facebook</a></p>
+    </div>
+    <div>
+      <h4>Horario</h4>
+      <p>Lun a Vie 10:00–19:00 · Sáb 10:00–14:00</p>
+    </div>
+  </div>
+  <div class="container legal">
+    <span>© 2025 VivaSpace. Todos los derechos reservados.</span>
+  </div>
+</footer>
+<a href="https://wa.me/59800000000" class="wsp" aria-label="WhatsApp">✆</a>
+
+<script>
+/* Reservas flow */
+(function(){
+  const f = document.querySelector('form');
+  if(!f) return;
+  f.addingEmailLater = true; // no pedir email aquí
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    const data = new FormData(f);
+    const params = new URLSearchParams();
+    ['servicio','consultorio','fecha','hora','duracion'].forEach(k=>{
+      if(data.get(k)) params.set(k, data.get(k));
+    });
+    // Monto ficticio segun duración
+    const dur = parseInt(data.get('duracion')||'60',10);
+    const monto = dur>=240? 2800 : dur>=120? 1600 : 900;
+    params.set('monto', monto);
+    window.location.href = 'pagos.html?' + params.toString();
+  });
+})();
+</script>
+</body>
+</html>
